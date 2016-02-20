@@ -5,7 +5,7 @@
     xmlns:local="using:Aldeo"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"(p
+    mc:Ignorable="d"
 	DataContext="{Binding Main, Source={StaticResource Locator}}">
 
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
