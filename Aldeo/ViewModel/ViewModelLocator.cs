@@ -6,41 +6,40 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
-namespace Aldeo.ViewModel
-{
-	public class ViewModelLocator
-	{/// <summary>
-	 /// Initializes a new instance of the ViewModelLocator class.
-	 /// </summary>
-		public ViewModelLocator()
-		{
-			ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+namespace Aldeo.ViewModel {
+    public class ViewModelLocator {/// <summary>
+                                   /// Initializes a new instance of the ViewModelLocator class.
+                                   /// </summary>
+        public ViewModelLocator() {
+            ServiceLocator.SetLocatorProvider (() => SimpleIoc.Default);
 
-			////if (ViewModelBase.IsInDesignModeStatic)
-			////{
-			////    // Create design time view services and models
-			////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-			////}
-			////else
-			////{
-			////    // Create run time view services and models
-			////    SimpleIoc.Default.Register<IDataService, DataService>();
-			////}
+            ////if (ViewModelBase.IsInDesignModeStatic)
+            ////{
+            ////    // Create design time view services and models
+            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
+            ////}
+            ////else
+            ////{
+            ////    // Create run time view services and models
+            ////    SimpleIoc.Default.Register<IDataService, DataService>();
+            ////}
 
-			SimpleIoc.Default.Register<MainViewModel>();
-		}
+            SimpleIoc.Default.Register<MainViewModel> ();
+            SimpleIoc.Default.Register<CalendarViewModel> ();
+            SimpleIoc.Default.Register<DictionaryViewModel> ();
+            SimpleIoc.Default.Register<EncyclopediaViewModel> ();
+            SimpleIoc.Default.Register<CalculatorViewModel> ();
+        }
 
-		public MainViewModel Main
-		{
-			get
-			{
-				return ServiceLocator.Current.GetInstance<MainViewModel>();
-			}
-		}
+        public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel> ();
+        public CalendarViewModel Calendar => ServiceLocator.Current.GetInstance<CalendarViewModel> ();
+        public DictionaryViewModel Dictionary => ServiceLocator.Current.GetInstance<DictionaryViewModel> ();
+        public EncyclopediaViewModel Encyclopedia => ServiceLocator.Current.GetInstance<EncyclopediaViewModel> ();
+        public CalculatorViewModel Calculator => ServiceLocator.Current.GetInstance<CalculatorViewModel> ();
 
-		public static void Cleanup()
-		{
-			// TODO Clear the ViewModels
-		}
-	}
+
+        public static void Cleanup() {
+            // TODO Clear the ViewModels
+        }
+    }
 }

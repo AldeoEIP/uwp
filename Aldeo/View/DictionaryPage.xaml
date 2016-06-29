@@ -1,0 +1,27 @@
+﻿<Page x:Class="Aldeo.View.DictionaryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:Aldeo.View"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      DataContext="{Binding Dictionary,
+                            Source={StaticResource Locator}}"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <local:Header Title="Dictionary" />
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <local:SearchBox Margin="0,0,0,20" />
+            <TextBlock Grid.Row="1" Text="{Binding Answer, Mode=OneWay}" />
+        </Grid>
+    </Grid>
+</Page>

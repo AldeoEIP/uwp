@@ -1,0 +1,69 @@
+﻿<Page x:Class="Aldeo.View.HandbookPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:Aldeo.View"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <local:Header />
+        <Grid Grid.Row="1">
+            <Pivot>
+                <PivotItem Header="Monday">
+                    <GridView>
+                        <TextBox Width="320" Text="Hello" />
+                        <TextBox Width="320" Text="Hello" />
+                        <TextBox Width="320" Text="Hello" />
+                    </GridView>
+                </PivotItem>
+                <PivotItem Header="Tuesday">
+                    <GridView>
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                    </GridView>
+                </PivotItem>
+                <PivotItem Header="Wednesday">
+                    <GridView>
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                    </GridView>
+                </PivotItem>
+                <PivotItem Header="Thursday">
+                    <GridView>
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                    </GridView>
+                </PivotItem>
+                <PivotItem Header="Friday">
+                    <GridView>
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                    </GridView>
+                </PivotItem>
+                <PivotItem Header="Saturday">
+                    <GridView>
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                    </GridView>
+                </PivotItem>
+                <PivotItem Header="Sunday">
+                    <GridView>
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                        <TextBox Width="360" Text="Hello" />
+                    </GridView>
+                </PivotItem>
+            </Pivot>
+        </Grid>
+    </Grid>
+</Page>

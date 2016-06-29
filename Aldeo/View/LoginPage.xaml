@@ -1,0 +1,54 @@
+﻿<Page x:Class="Aldeo.View.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:Aldeo.View"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <local:Header />
+
+        <Grid Margin="20" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="0"
+                       Margin="6,6,6,12"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="Segoe UI Symbol"
+                       Text="" />
+            <TextBox Grid.Row="0"
+                     Grid.Column="1"
+                     Grid.ColumnSpan="3"
+                     Margin="0,0,0,6" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Margin="6,6,6,12"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="Segoe UI Symbol"
+                       Text="" />
+            <PasswordBox Grid.Row="1"
+                         Grid.Column="1"
+                         Grid.ColumnSpan="3"
+                         Margin="0,0,0,6" />
+            <Button Grid.Row="2"
+                    Grid.Column="3"
+                    HorizontalAlignment="Stretch"
+                    Content=""
+                    FontFamily="Segoe Ui Symbol" />
+        </Grid>
+    </Grid>
+</Page>
