@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <local:Header Title="Dictionary" />
+        <local:Header Title="Dictionnaire" />
         <Grid Grid.Row="1" Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

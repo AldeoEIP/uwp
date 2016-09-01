@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Popups;
-using Windows.UI.Xaml.Controls;
-using Aldeo.View;
+using Aldeo.Model;
 using GalaSoft.MvvmLight.Command;
-using GalaSoft.MvvmLight.Views;
-using MenuTile = Aldeo.Model.MenuTile;
 
 namespace Aldeo.ViewModel {
-    public class MainViewModel {
+    public class PencilCaseViewModel {
         public string Message { get; set; }
         public IEnumerable<MenuTile> Menu { get; set; }
 
@@ -26,16 +21,14 @@ namespace Aldeo.ViewModel {
         //public RelayCommand ItemSelectedCommand { get; set; }
         private readonly INavigationService _navigationService = new NavigationService();
 
-        public MainViewModel() {
+        public PencilCaseViewModel() {
             Message = "He is alive! Alive!";
             Menu = new[]
             {
-                new MenuTile('', "Calendrier", "Calendar"),
-                new MenuTile('', "Trousse","PencilCase"),
-                new MenuTile('⛄', "Compagnon", "Companion"),
-                new MenuTile('', "Market"),
-                new MenuTile('', "Réveil", "Alarm"),
-                new MenuTile('', "Paramètres", "Settings")
+                new MenuTile('', "Calculatrice", "Calculator"),
+                new MenuTile('', "Dictionnaire", "Dictionary"),
+                new MenuTile('', "Encyclopédie", "Encyclopedia"),
+                new MenuTile('', "Traducteur", "Translator")
             };
 
             LoadedCommand = new RelayCommand (LoadedExecute);
@@ -54,10 +47,7 @@ namespace Aldeo.ViewModel {
         }
 
         private void SelectionChangedExecute(MenuTile tile) {
-            if (tile.Tag == "Settings"
-                  || tile.Tag == "Calendar"
-                  || tile.Tag == "Market"
-                  || tile.Tag == "Alarm") {
+            if (tile.Tag == "Translator") {
                 ShowNotAvailable (tile.Title);
                 return;
             }

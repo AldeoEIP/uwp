@@ -4,14 +4,43 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:Aldeo.View"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:my="using:Syncfusion.UI.Xaml.Schedule"
+      xmlns:my1="using:Syncfusion.UI.Xaml.Controls.Input"
       DataContext="{Binding Calendar,
                             Source={StaticResource Locator}}"
       mc:Ignorable="d">
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
-            <local:Header />
-            <CalendarView Width="350" Height="445" />
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <local:Header Title="Calendrier" />
+        <Grid Grid.Row="1" Margin="20">
+            <my1:SfCalendar />
+        </Grid>
+        <CommandBar Grid.Row="1" VerticalAlignment="Bottom">
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="Like" Label="Like" />
+                <AppBarButton Icon="Dislike" Label="Dislike" />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
     </Grid>
+    <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <local:Header Title="Calendrier" />
+    -->
+    <!--<CalendarView />-->
+    <!--
+
+            <my1:SfCalendar />
+        </StackPanel>
+
+        <CommandBar VerticalAlignment="Bottom">
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="Like" Label="Like" />
+                <AppBarButton Icon="Dislike" Label="Dislike" />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Grid>-->
 </Page>

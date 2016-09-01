@@ -17,26 +17,6 @@
     </interactivity:Interaction.Behaviors>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <!--<VisualState.StateTriggers>
-                    -->
-                    <!--
-                        VisualState to be triggered when window
-                        width is >=720 effective pixels.
-                    -->
-                    <!--
-                        <AdaptiveTrigger MinWindowWidth="720" />
-                    </VisualState.StateTriggers>-->
-                    <VisualState.Setters>
-                        <Setter Target="myPanel.Orientation" Value="Horizontal" />
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
@@ -47,14 +27,18 @@
         <GridView x:Name="MenuView"
                   Grid.Row="1"
                   Margin="15"
+                  HorizontalContentAlignment="Stretch"
+                  VerticalContentAlignment="Stretch"
+                  IsItemClickEnabled="True"
                   ItemsSource="{Binding Menu}">
-            <GridView.Background>
-                <SolidColorBrush />
-            </GridView.Background>
+
 
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <view:MenuTile Margin="5" />
+                    <Grid VerticalAlignment="Stretch">
+                        <view:MenuTile Margin="5" />
+
+                    </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
 
@@ -65,15 +49,20 @@
             </interactivity:Interaction.Behaviors>
 
             <!--<GridView.ItemsPanel>
-            -->
-            <!--<ItemsPanelTemplate>
-                    <WrapGrid />-->
-            <!--  Orientation="Horizontal"/>  -->
-            <!--
+                <ItemsPanelTemplate>
+                    <WrapGrid Orientation="Horizontal" VerticalChildrenAlignment="Stretch"/>
                 </ItemsPanelTemplate>-->
-            <!--
-            </GridView.ItemsPanel>-->
 
+            <!--<GridView.ItemsPanel>
+
+                <ItemsPanelTemplate>
+                    <WrapGrid />
+            -->
+            <!--  Orientation=&quot;Horizontal&quot;/&gt;  -->
+
+            <!--</ItemsPanelTemplate>-->
+
+            <!--</GridView.ItemsPanel>-->
 
             <!--<StackPanel x:Name="myPanel" Orientation="Vertical">
                 <TextBlock Text="This is a block of text. It is text block 1. "
@@ -89,24 +78,44 @@
             <!--<AppBarToggleButton Icon="Shuffle" Label="Shuffle" Click="AppBarButton_Click" />
             <AppBarToggleButton Icon="RepeatAll" Label="Repeat" Click="AppBarButton_Click"/>
             <AppBarSeparator/>-->
-            <AppBarButton Icon="Forward" Label="Forward">
+            <!--<AppBarButton Icon="Forward" Label="Forward">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:InvokeCommandAction Command="{Binding ClickedAccount}" />
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
-            </AppBarButton>
+            </AppBarButton>-->
 
             <CommandBar.SecondaryCommands>
                 <AppBarButton Icon="Like" Label="Like" />
                 <AppBarButton Icon="Dislike" Label="Dislike" />
             </CommandBar.SecondaryCommands>
 
-            <CommandBar.Content>
+            <!--<CommandBar.Content>
                 <TextBlock Margin="12,14" Text="Now playing..." />
-            </CommandBar.Content>
+            </CommandBar.Content>-->
         </CommandBar>
-    </Grid>
 
+        <!--<VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+        -->
+        <!--<VisualState.StateTriggers>
+        -->
+        <!--
+            VisualState to be triggered when window
+            width is >=720 effective pixels.
+        -->
+        <!--
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>-->
+        <!--
+                    <VisualState.Setters>
+                        <Setter Target="myPanel.Orientation" Value="Horizontal" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>-->
+    </Grid>
 
 </Page>

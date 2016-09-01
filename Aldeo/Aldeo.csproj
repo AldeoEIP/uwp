@@ -106,16 +106,24 @@
     <Compile Include="NavigationService.cs" />
     <Compile Include="ViewModel\CalculatorViewModel.cs" />
     <Compile Include="ViewModel\CalendarViewModel.cs" />
+    <Compile Include="ViewModel\CompanionViewModel.cs" />
     <Compile Include="ViewModel\DictionaryViewModel.cs" />
     <Compile Include="ViewModel\EncyclopediaViewModel.cs" />
+    <Compile Include="ViewModel\PencilCaseViewModel.cs" />
     <Compile Include="View\AccountPage.xaml.cs">
       <DependentUpon>AccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AlarmPage.xaml.cs">
+      <DependentUpon>AlarmPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CalculatorPage.xaml.cs">
       <DependentUpon>CalculatorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CalendarPage.xaml.cs">
       <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CompanionPage.xaml.cs">
+      <DependentUpon>CompanionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Converter\TitleConverter.cs" />
     <Compile Include="View\Converter\AdaptiveIconSizeConverter.cs" />
@@ -147,8 +155,8 @@
     <Compile Include="View\MenuTile.xaml.cs">
       <DependentUpon>MenuTile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PlaygroundPage.xaml.cs">
-      <DependentUpon>PlaygroundPage.xaml</DependentUpon>
+    <Compile Include="View\PencilCasePage.xaml.cs">
+      <DependentUpon>PencilCasePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SearchBox.xaml.cs">
       <DependentUpon>SearchBox.xaml</DependentUpon>
@@ -181,11 +189,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\AlarmPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CalculatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CalendarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CompanionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,7 +237,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PlaygroundPage.xaml">
+    <Page Include="View\PencilCasePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -237,6 +253,9 @@
   <ItemGroup>
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
       <Name>Behaviors SDK %28XAML%29</Name>
+    </SDKReference>
+    <SDKReference Include="Syncfusion Controls for UWP XAML, Version=14.2.0.26">
+      <Name>Syncfusion Controls for UWP XAML</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>

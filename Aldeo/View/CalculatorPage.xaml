@@ -4,6 +4,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:Aldeo.View"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:my="using:Syncfusion.UI.Xaml.Controls.Input"
       DataContext="{Binding Calculator,
                             Source={StaticResource Locator}}"
       mc:Ignorable="d">
@@ -12,16 +13,24 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <local:Header Title="Calculatrice" />
-        <Grid Grid.Row="1" Margin="20">
-            <Grid.RowDefinitions>
+        <Grid Grid.Row="1" Margin="0">
+            <!--<Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <local:SearchBox Margin="0,0,0,20" Icon="=" />
+                <RowDefinition />-->
+            <!--</Grid.RowDefinitions>-->
+            <!--<local:SearchBox Margin="0,0,0,20" Icon="=" />-->
+            <my:SfCalculator />
             <!--<WebView Grid.Row="1" />-->
         </Grid>
+        <!--<CommandBar Grid.Row="2" VerticalAlignment="Bottom">
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="Like" Label="Like" />
+                <AppBarButton Icon="Dislike" Label="Dislike" />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>-->
     </Grid>
 </Page>

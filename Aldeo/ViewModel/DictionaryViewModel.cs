@@ -26,14 +26,14 @@ namespace Aldeo.ViewModel {
 
         private async void Connect()
         {
-            var task = client.LoginAsync ("toto42", "toto42").ConfigureAwait (false);
-            await task;
+            //var task = client.LoginAsync ("beta", "betatest").ConfigureAwait (false);
+            //await task;
         }
 
         private async void SearchClickedExecute(string input) {
-            var answer = await SearchAsync (input).ConfigureAwait(false);
+            //var answer = await SearchAsync (input).ConfigureAwait(false);
 
-            var dialog = new MessageDialog (answer);
+            var dialog = new MessageDialog ("answer");
             await dialog.ShowAsync ();
             //RaisePropertyChanged (() => Answer);
         }

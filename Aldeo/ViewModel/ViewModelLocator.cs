@@ -25,6 +25,8 @@ namespace Aldeo.ViewModel {
             ////}
 
             SimpleIoc.Default.Register<MainViewModel> ();
+            SimpleIoc.Default.Register<PencilCaseViewModel> ();
+            SimpleIoc.Default.Register<CompanionViewModel> ();
             SimpleIoc.Default.Register<CalendarViewModel> ();
             SimpleIoc.Default.Register<DictionaryViewModel> ();
             SimpleIoc.Default.Register<EncyclopediaViewModel> ();
@@ -32,11 +34,12 @@ namespace Aldeo.ViewModel {
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel> ();
+        public PencilCaseViewModel PencilCase => ServiceLocator.Current.GetInstance<PencilCaseViewModel> ();
+        public CompanionViewModel Companion => ServiceLocator.Current.GetInstance<CompanionViewModel> ();
         public CalendarViewModel Calendar => ServiceLocator.Current.GetInstance<CalendarViewModel> ();
         public DictionaryViewModel Dictionary => ServiceLocator.Current.GetInstance<DictionaryViewModel> ();
         public EncyclopediaViewModel Encyclopedia => ServiceLocator.Current.GetInstance<EncyclopediaViewModel> ();
         public CalculatorViewModel Calculator => ServiceLocator.Current.GetInstance<CalculatorViewModel> ();
-
 
         public static void Cleanup() {
             // TODO Clear the ViewModels
