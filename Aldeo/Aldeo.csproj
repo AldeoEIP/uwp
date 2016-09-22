@@ -259,8 +259,9 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SharpDeo">
-      <HintPath>..\..\SharpDeo\SharpDeo\bin\Release\SharpDeo.dll</HintPath>
+    <Reference Include="SharpDeo, Version=0.1.6027.43168, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SharpDeo\SharpDeo\bin\Debug\SharpDeo.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

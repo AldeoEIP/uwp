@@ -1,15 +1,21 @@
 ﻿<Page x:Class="Aldeo.View.DictionaryPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
       xmlns:local="using:Aldeo.View"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      DataContext="{Binding Dictionary,
-                            Source={StaticResource Locator}}"
+      DataContext="{Binding Dictionary, Source={StaticResource Locator}}"
       mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <interactivity:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </core:EventTriggerBehavior>
+    </interactivity:Interaction.Behaviors>
 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
@@ -21,7 +27,11 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <local:SearchBox Margin="0,0,0,20" />
-            <TextBlock Grid.Row="1" Text="{Binding Answer, Mode=OneWay}" />
+            <ListBox Grid.Row="1">
+                <TextBlock FontSize="50" Text="{Binding Title, Mode=OneWay}" />
+                <TextBlock Text="{Binding Answer, Mode=OneWay}" />
+                <!--<HyperlinkButton NavigateUri="{Binding Url, Mode=TwoWay}">Wanna know more</HyperlinkButton>-->
+            </ListBox>
         </Grid>
     </Grid>
 </Page>

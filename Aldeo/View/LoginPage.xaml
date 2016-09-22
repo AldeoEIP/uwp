@@ -64,8 +64,8 @@
         </Grid>
         <CommandBar Grid.Row="0" VerticalAlignment="Bottom">
             <CommandBar.SecondaryCommands>
-                <AppBarButton Icon="Like" Label="s'enregistrer" />
-                <AppBarButton Icon="Dislike" Label="Dislike" />
+                <AppBarButton Icon="BlockContact    " Label="se connecter sans compte" />
+                <AppBarButton Icon="AddFriend" Label="s'enregistrer" />
             </CommandBar.SecondaryCommands>
         </CommandBar>
     </Grid>
