@@ -37,9 +37,10 @@
                 VerticalAlignment="Stretch"
                 Background="{StaticResource SystemControlHighlightAccentBrush}"
                 Click="Button_Click"
-                Content=""
+                Content="{Binding Icon, Mode=OneWay}"
                 FontFamily="Segoe UI Symbol"
-                FontSize="20"
                 Foreground="White" />
+        <!--FontSize="20"-->
+
     </Grid>
 </UserControl>

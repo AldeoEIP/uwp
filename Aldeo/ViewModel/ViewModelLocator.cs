@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GalaSoft.MvvmLight.Ioc;
+﻿using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Aldeo.ViewModel {
@@ -31,6 +26,8 @@ namespace Aldeo.ViewModel {
             SimpleIoc.Default.Register<DictionaryViewModel> ();
             SimpleIoc.Default.Register<EncyclopediaViewModel> ();
             SimpleIoc.Default.Register<CalculatorViewModel> ();
+            SimpleIoc.Default.Register<TranslatorViewModel> ();
+            SimpleIoc.Default.Register<MarketViewModel> ();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel> ();
@@ -40,6 +37,9 @@ namespace Aldeo.ViewModel {
         public DictionaryViewModel Dictionary => ServiceLocator.Current.GetInstance<DictionaryViewModel> ();
         public EncyclopediaViewModel Encyclopedia => ServiceLocator.Current.GetInstance<EncyclopediaViewModel> ();
         public CalculatorViewModel Calculator => ServiceLocator.Current.GetInstance<CalculatorViewModel> ();
+        public TranslatorViewModel Translator => ServiceLocator.Current.GetInstance<TranslatorViewModel> ();
+
+        public MarketViewModel Market => ServiceLocator.Current.GetInstance<MarketViewModel> ();
 
         public static void Cleanup() {
             // TODO Clear the ViewModels

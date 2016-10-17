@@ -6,8 +6,7 @@
       xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:view="using:Aldeo.View"
-      DataContext="{Binding Main,
-                            Source={StaticResource Locator}}"
+      DataContext="{Binding Main, Source={StaticResource Locator}}"
       mc:Ignorable="d">
 
     <interactivity:Interaction.Behaviors>
@@ -20,6 +19,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <!--<TextBlock FontSize="50" Text="{Binding Message}" />-->
         <view:Header Title="Aldeo" />
@@ -116,6 +116,10 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>-->
+    <view:Bot Grid.Row="2" HorizontalAlignment="Stretch" MaxWidth="720" VerticalAlignment="Bottom">
+        
+    </view:Bot>
+    
     </Grid>
 
 </Page>

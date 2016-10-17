@@ -41,6 +41,7 @@ namespace Aldeo {
         }
 
         private async void Connect() {
+            //await client.LoginAsync ("toto42", "toto42").ConfigureAwait (false);
 
         }
 

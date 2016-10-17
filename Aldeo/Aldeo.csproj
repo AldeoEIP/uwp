@@ -109,12 +109,17 @@
     <Compile Include="ViewModel\CompanionViewModel.cs" />
     <Compile Include="ViewModel\DictionaryViewModel.cs" />
     <Compile Include="ViewModel\EncyclopediaViewModel.cs" />
+    <Compile Include="ViewModel\MarketViewModel.cs" />
     <Compile Include="ViewModel\PencilCaseViewModel.cs" />
+    <Compile Include="ViewModel\TranslatorViewModel.cs" />
     <Compile Include="View\AccountPage.xaml.cs">
       <DependentUpon>AccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\AlarmPage.xaml.cs">
       <DependentUpon>AlarmPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Bot.xaml.cs">
+      <DependentUpon>Bot.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CalculatorPage.xaml.cs">
       <DependentUpon>CalculatorPage.xaml</DependentUpon>
@@ -164,6 +169,12 @@
     <Compile Include="View\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Translation.xaml.cs">
+      <DependentUpon>Translation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TranslatorPage.xaml.cs">
+      <DependentUpon>TranslatorPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -190,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AlarmPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Bot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -246,6 +261,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Translation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TranslatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

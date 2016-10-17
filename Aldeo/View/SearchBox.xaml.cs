@@ -17,17 +17,19 @@ using GalaSoft.MvvmLight.Messaging;
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace Aldeo.View {
-    public sealed partial class SearchBox : UserControl {
+    public sealed partial class SearchBox {
         public static readonly DependencyProperty IconProperty =
             DependencyProperty.Register("Icon", typeof(string), typeof(SearchBox), new PropertyMetadata(""));
 
-        public string Icon {
+        public string Icon { // 
             get { return (string) GetValue (IconProperty); }
             set { SetValue (IconProperty, value); }
         }
 
         public SearchBox() {
             InitializeComponent ();
+
+            DataContext = this;
 
             Loaded += SearchBox_Loaded;
         }

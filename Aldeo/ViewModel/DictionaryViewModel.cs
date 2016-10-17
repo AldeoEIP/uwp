@@ -33,23 +33,38 @@ namespace Aldeo.ViewModel {
         }
 
         private async void LoadedExecute() {
-            await ConnectAsync ().ConfigureAwait (false);
-            Messenger.Default.Register<string> (this, SearchClickedExecute);
-            Debug.WriteLine("connected");
+            try
+            {
+                return;
+                await Co().ConfigureAwait (false);
+                await Task.Run(() =>
+                {
+                    Messenger.Default.Register<string> (this, SearchClickedExecute);
+                    Debug.WriteLine ("connected");
+                }).ConfigureAwait(false);
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        private Task ConnectAsync() {
-            var task = client.LoginAsync ("toto42", "toto42");
-            return task;
+        private Task Co()
+        {
+            var t = client.LoginAsync("toto42", "toto42");
+            return t;
         }
 
         private async void SearchClickedExecute(string input) {
-            try {
+            try
+            {
+                return;
                 var result = await client.GetDictionaryDefintionAsync (input).ConfigureAwait (false);
 
                 var dispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
 
-                await dispatcher.RunAsync (Windows.UI.Core.CoreDispatcherPriority.Normal, () => {
+                await dispatcher.RunAsync (CoreDispatcherPriority.Normal, () => {
                     Title = result.Title;
                     Answer = result.Extract;
                     //Url = result.DetailUrl;
@@ -64,7 +79,7 @@ namespace Aldeo.ViewModel {
 
             }
             catch (Exception ex) {
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine (ex.Message);
             }
         }
     }

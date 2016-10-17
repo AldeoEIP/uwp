@@ -47,10 +47,10 @@ namespace Aldeo.ViewModel {
         }
 
         private void SelectionChangedExecute(MenuTile tile) {
-            if (tile.Tag == "Translator") {
-                ShowNotAvailable (tile.Title);
-                return;
-            }
+            //if (tile.Tag == "Translator") {
+            //    ShowNotAvailable (tile.Title);
+            //    return;
+            //}
             _navigationService.Navigate ($"Aldeo.View.{tile.Tag}Page");
         }
 

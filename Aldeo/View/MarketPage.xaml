@@ -4,7 +4,42 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:Aldeo.View"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      mc:Ignorable="d">
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+      mc:Ignorable="d"
+      DataContext="{Binding Market, Source={StaticResource Locator}}"
+      >
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <Pivot>
+            <PivotItem Header="A">
+                <Grid>
+                    
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="B">
+                <Grid>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" />
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="C">
+                <Grid>
+
+                </Grid>
+            </PivotItem>
+        </Pivot>
+        
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>-->
+        <!--<local:Header Grid.Row="0" Title="Aldeo" />-->
+
+
+        <local:Bot HorizontalAlignment="Stretch" MaxWidth="720" Height="100" VerticalAlignment="Bottom">
+
+        </local:Bot>
+
+    </Grid>
 </Page>
