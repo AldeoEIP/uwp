@@ -6,8 +6,17 @@
       xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:view="using:Aldeo.View"
+      xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
       DataContext="{Binding Main, Source={StaticResource Locator}}"
       mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="MenuTemplate">
+            <Grid VerticalAlignment="Stretch">
+                <view:MenuTile Margin="5" />
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
 
     <interactivity:Interaction.Behaviors>
         <core:EventTriggerBehavior EventName="Loaded">
@@ -24,7 +33,25 @@
         <!--<TextBlock FontSize="50" Text="{Binding Message}" />-->
         <view:Header Title="Aldeo" />
 
-        <GridView x:Name="MenuView"
+
+        <!--ItemHeight="{Binding ItemHeight.Value}"-->
+        <!--DesiredWidth="{Binding DesiredWidth.Value}"-->
+        <!--SelectionMode="{Binding SelectionMode.Value,Mode=TwoWay}"-->
+
+        <controls:AdaptiveGridView
+          Grid.Row="1"
+          x:Name="MenuView"
+            IsItemClickEnabled="True"  
+          ItemTemplate="{StaticResource MenuTemplate}"
+                  ItemsSource="{Binding Menu}">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="SelectionChanged">
+                    <core:InvokeCommandAction Command="{Binding ChangedSelection}" CommandParameter="{Binding SelectedItem, ElementName=MenuView}" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+        </controls:AdaptiveGridView>
+
+        <!--<GridView x:Name="MenuView"
                   Grid.Row="1"
                   Margin="15"
                   HorizontalContentAlignment="Stretch"
@@ -33,38 +60,33 @@
                   ItemsSource="{Binding Menu}">
 
 
-            <GridView.ItemTemplate>
-                <DataTemplate>
-                    <Grid VerticalAlignment="Stretch">
-                        <view:MenuTile Margin="5" />
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid VerticalAlignment="Stretch">
+                            <view:MenuTile Margin="5" />
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>-->
 
-                    </Grid>
-                </DataTemplate>
-            </GridView.ItemTemplate>
 
-            <interactivity:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="SelectionChanged">
-                    <core:InvokeCommandAction Command="{Binding ChangedSelection}" CommandParameter="{Binding SelectedItem, ElementName=MenuView}" />
-                </core:EventTriggerBehavior>
-            </interactivity:Interaction.Behaviors>
 
-            <!--<GridView.ItemsPanel>
+        <!--<GridView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapGrid Orientation="Horizontal" VerticalChildrenAlignment="Stretch"/>
                 </ItemsPanelTemplate>-->
 
-            <!--<GridView.ItemsPanel>
+        <!--<GridView.ItemsPanel>
 
                 <ItemsPanelTemplate>
                     <WrapGrid />
             -->
-            <!--  Orientation=&quot;Horizontal&quot;/&gt;  -->
+        <!--  Orientation=&quot;Horizontal&quot;/&gt;  -->
 
-            <!--</ItemsPanelTemplate>-->
+        <!--</ItemsPanelTemplate>-->
 
-            <!--</GridView.ItemsPanel>-->
+        <!--</GridView.ItemsPanel>-->
 
-            <!--<StackPanel x:Name="myPanel" Orientation="Vertical">
+        <!--<StackPanel x:Name="myPanel" Orientation="Vertical">
                 <TextBlock Text="This is a block of text. It is text block 1. "
                  Style="{ThemeResource BodyTextBlockStyle}"/>
                 <TextBlock Text="This is a block of text. It is text block 2. "
@@ -73,7 +95,7 @@
                  Style="{ThemeResource BodyTextBlockStyle}"/>
             </StackPanel>-->
 
-        </GridView>
+        <!--</GridView>-->
         <CommandBar Grid.Row="1" VerticalAlignment="Bottom">
             <!--<AppBarToggleButton Icon="Shuffle" Label="Shuffle" Click="AppBarButton_Click" />
             <AppBarToggleButton Icon="RepeatAll" Label="Repeat" Click="AppBarButton_Click"/>
@@ -116,10 +138,10 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>-->
-    <view:Bot Grid.Row="2" HorizontalAlignment="Stretch" MaxWidth="720" VerticalAlignment="Bottom">
-        
-    </view:Bot>
-    
+        <view:Bot Grid.Row="2" HorizontalAlignment="Stretch" MaxWidth="720" VerticalAlignment="Bottom">
+
+        </view:Bot>
+
     </Grid>
 
 </Page>

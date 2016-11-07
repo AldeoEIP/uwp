@@ -40,7 +40,7 @@ namespace Aldeo {
             this.Suspending += OnSuspending;
         }
 
-        private async void Connect() {
+        private void Connect() {
             //await client.LoginAsync ("toto42", "toto42").ConfigureAwait (false);
 
         }

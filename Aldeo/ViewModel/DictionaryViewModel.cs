@@ -9,6 +9,7 @@ using System.Windows.Input;
 using Windows.ApplicationModel.Core;
 using Windows.UI.Core;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
@@ -32,22 +33,22 @@ namespace Aldeo.ViewModel {
             Url = "";
         }
 
-        private async void LoadedExecute() {
-            try
-            {
+        private /*async*/ void LoadedExecute() {
+            //try
+            //{
                 return;
-                await Co().ConfigureAwait (false);
-                await Task.Run(() =>
-                {
-                    Messenger.Default.Register<string> (this, SearchClickedExecute);
-                    Debug.WriteLine ("connected");
-                }).ConfigureAwait(false);
+            //    await Co().ConfigureAwait (false);
+            //    await Task.Run(() =>
+            //    {
+            //        Messenger.Default.Register<string> (this, SearchClickedExecute);
+            //        Debug.WriteLine ("connected");
+            //    }).ConfigureAwait(false);
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    throw;
+            //}
         }
 
         private Task Co()
@@ -60,22 +61,22 @@ namespace Aldeo.ViewModel {
             try
             {
                 return;
-                var result = await client.GetDictionaryDefintionAsync (input).ConfigureAwait (false);
+                //var result = await client.GetDictionaryDefintionAsync (input).ConfigureAwait (false);
 
-                var dispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
+                //var dispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
 
-                await dispatcher.RunAsync (CoreDispatcherPriority.Normal, () => {
-                    Title = result.Title;
-                    Answer = result.Extract;
-                    //Url = result.DetailUrl;
-                    //RaisePropertyChanged (() => Title);
-                    //RaisePropertyChanged (() => Answer);
+                //await dispatcher.RunAsync (CoreDispatcherPriority.Normal, () => {
+                //    Title = result.Title;
+                //    Answer = result.Extract;
+                //    //Url = result.DetailUrl;
+                //    //RaisePropertyChanged (() => Title);
+                //    //RaisePropertyChanged (() => Answer);
 
-                    RaisePropertyChanged ("Title");
-                    RaisePropertyChanged ("Answer");
+                //    RaisePropertyChanged ("Title");
+                //    RaisePropertyChanged ("Answer");
 
-                    //RaisePropertyChanged (() => Url);
-                });
+                //    //RaisePropertyChanged (() => Url);
+                //});
 
             }
             catch (Exception ex) {
